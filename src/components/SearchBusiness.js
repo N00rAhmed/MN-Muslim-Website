@@ -30,7 +30,6 @@ const SearchBusiness = () => {
   const handlePostClick = (business) => {
     navigate(`/detail?title=${encodeURIComponent(business.title)}&description=${encodeURIComponent(business.description)}&address=${encodeURIComponent(business.address)}&number=${encodeURIComponent(business.number)}&services=${encodeURIComponent(business.services)}&links=${encodeURIComponent(business.links)}&workingHours=${encodeURIComponent(business.workingHours)}&createdAt=${encodeURIComponent(business.createdAt)}`);
   };
-//   <button onClick={handlePostClick}>detail</button>
 
 
   // Update filteredBusinesses based on user input
