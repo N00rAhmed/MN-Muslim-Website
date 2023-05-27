@@ -1,0 +1,40 @@
+/* .title{
+    display: flex;
+    justify-content: center;
+}
+.sub-title{
+    display: flex;
+    justify-content: center;
+
+}
+.small-title{
+    display: flex;
+    justify-content: center;
+} */
+
+.about-button{
+    display: flex;
+    justify-content: center;
+}
+.join-button{
+    display: flex;
+    justify-content: center;   
+}
+h1{
+    display: flex;
+    justify-content: center;
+
+}
+h2{
+    display: flex;
+    justify-content: center;
+}
+
+h3{
+    display: flex;
+    justify-content: center;
+}
+.line{
+    display: flex;
+    justify-content: center;
+}

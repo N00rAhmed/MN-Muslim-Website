@@ -1,0 +1,124 @@
+import { useState } from "react"
+import { UseBusinessesContext } from '../hooks/UseBusinessesContext';
+import '../styles/business.css';
+import findBusiness from "../Pages/findBusiness";
+import { useNavigate } from 'react-router-dom';
+import BusinessDetails from "./BusinessDetails";
+
+const BusinessForm = () => {
+    const { dispatch } = UseBusinessesContext()
+
+    const [title, setTitle] = useState('')
+    const [description, setDescription] = useState('')
+    const [address, setAddress] = useState('')
+    const [number, setNumber] = useState('')
+    const [services, setServices] = useState('')
+    const [links, setLinks] = useState('')
+    const [workingHours, setWorkingHours] = useState('')
+    const [error, setError] = useState(null)
+
+    let navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        const business = {title, description, address, number, services, links, workingHours}
+
+        const response = await fetch('http://localhost:4000/api/businesses', {
+            method: 'POST',
+            body: JSON.stringify(business),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        const json = await response.json()
+
+        if (!response.ok) {
+            setError(json.error)
+        }
+        if(response.ok) {
+            setTitle('')
+            setDescription('')
+            setAddress('')
+            setNumber('')
+            setServices('')
+            setLinks('')
+            setWorkingHours('')
+
+            setError(null)
+            console.log('new business added', json)
+            dispatch({type:'CREATE_BUSINESS', payload: json})
+
+            navigate("/findBusiness")
+        }
+    }
+
+    return(
+        <form className="create" action="/findBusiness" method="POST" onSubmit={handleSubmit}>
+            <h3>Add a business</h3>
+
+            <label>Name</label>
+            <input 
+            // type="text" 
+            onChange={(e) => 
+            setTitle(e.target.value)}
+            value={title}
+            />
+
+            <label>description</label>
+            <input 
+            // type="text" 
+            onChange={(e) => 
+            setDescription(e.target.value)}
+            value={description}
+            />
+
+
+            <label>address</label>
+            <input 
+            // type="text" 
+            onChange={(e) => 
+            setAddress(e.target.value)}
+            value={address}
+            />
+
+            <label>number</label>
+            <input 
+            // type="text" 
+            onChange={(e) => 
+            setNumber(e.target.value)}
+            value={number}
+            />
+
+            <label>services</label>
+            <input 
+            // type="text" 
+            onChange={(e) => 
+            setServices(e.target.value)}
+            value={services}
+            />
+
+
+            <label>links</label>
+            <input 
+            // type="text" 
+            onChange={(e) => 
+            setLinks(e.target.value)}
+            value={links}
+            />
+
+            <label>working hours</label>
+            <input 
+            // type="text" 
+            onChange={(e) => 
+            setWorkingHours(e.target.value)}
+            value={workingHours}
+            />
+
+            <button onSubmit={BusinessDetails}>Add Business</button>
+            {error && <div className="error">{error}</div>}
+        </form>
+    )
+}
+
+export default BusinessForm
