@@ -32,7 +32,7 @@ const MasjidSearchFilter = () => {
   };
 
 
-  // Update filteredBusinesses based on user input
+  // Update filteredBusinesses based on the users input
   useEffect(() => {
     const filtered = masjids.filter(business => {
       const Name = business.Name.toLowerCase();
