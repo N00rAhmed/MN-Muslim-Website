@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import SearchFilter from '../components/SearchBusiness.js';
 import '../styles/admin.css';
 import { UseBusinessesContext } from '../hooks/UseBusinessesContext';
+import MasjidSearchFilter from '../components/MasjidSearchFilter.js';
 
 function Directory() {
   const {businesses, dispatch} = UseBusinessesContext()
@@ -31,7 +32,7 @@ function Directory() {
         <a href='/findBusiness'><p>All Businesses</p></a>
         {/* <p href="/findMasjid">Find Masjid</p> */}
         <SearchFilter/>
-
+        <MasjidSearchFilter/>
       </div>
       
       <Footer/>

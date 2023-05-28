@@ -3,7 +3,10 @@ import { UseBusinessesContext } from '../hooks/UseBusinessesContext';
 import BusinessPage from '../Pages/findBusiness';
 import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 
+
 const PublicViewingDetails = ({ business }) => {
+
+  
     const { dispatch } = UseBusinessesContext();
     const navigate = useNavigate(); // Initialize the useNavigate hook
   

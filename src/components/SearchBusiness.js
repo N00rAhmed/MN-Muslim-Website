@@ -41,6 +41,7 @@ const SearchBusiness = () => {
     setFilteredBusinesses(filtered);
   }, [searchTerm, businesses]);
 
+  
   return (
     <div>
       <input

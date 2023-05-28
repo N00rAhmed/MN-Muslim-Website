@@ -10,7 +10,7 @@ import Business from '../Pages/findBusiness';
 import Footer from './Footer';
 import Footer2 from './Footer2';
 import PublicViewingDetails from './PublicViewingDetails';
-
+import DetailMasjid from './DetailMasjid';
 import BusinessForm from '../components/BusinessForm.js';
 import Detail from './Detail';
 
@@ -72,6 +72,13 @@ function Routing() {
             element={ <PublicViewingDetails /> }
         />
 
+        <Route
+            path="/detailmasjid"
+            element={ <DetailMasjid /> }
+        />
+
+
+{/* DetailMasjid */}
 {/* PublicViewingDetails */}
 {/* Footer2 */}
 {/* Admin */}

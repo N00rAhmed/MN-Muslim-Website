@@ -8,7 +8,7 @@ function Detail() {
 
   const title = params.get('title');
   const description = params.get('description');
-  const address = params.get('address');
+  const address = params.get('Address');
   const number = params.get('number');
   const services = params.get('services');
   const links = params.get('links');
