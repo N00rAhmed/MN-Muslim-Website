@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 import { UseCarouselContext } from '../hooks/UseCarouselContext';
 import CarouselDetails from '../components/CarouselDetails'
+import CarouselForm from '../components/CarouselForm';
 import '../styles/admin.css';
 import Nav from '../components/Nav';
 
@@ -24,9 +25,11 @@ const  AdminAnnouncements = () => {
 
 
   return (
-    <div className="workout-details">
 
-      <h2>Announcements</h2>
+<div>
+  <h2>Announcement</h2>
+<div className="workout-details">
+
       {/* <span onClick={handleClick}>delete</span> */}
       {/* <button onClick={handlePostClick}>detail</button> */}
       <div className='home'>
@@ -36,7 +39,8 @@ const  AdminAnnouncements = () => {
                 ))}
             </div>
         </div>
-
+        <CarouselForm />
+    </div>
     </div>
   )
 }

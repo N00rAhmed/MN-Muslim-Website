@@ -37,6 +37,15 @@ const PrevArrow = (props) => {
 
 const Home = ({ carousel }) => {
   let navigate = useNavigate();
+  const [carouselData, setCarouselData] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from the API
+    fetch('http://localhost:4000/api/carousel')
+      .then((response) => response.json())
+      .then((data) => setCarouselData(data))
+      .catch((error) => console.error(error));
+  }, []);
 
   const settings = {
     dots: true,
@@ -67,13 +76,25 @@ const Home = ({ carousel }) => {
       <div className="carousel-container">
         <Slider {...settings}>
           <div className='sentence'>
-            <p>Slide 1</p>
+          {carouselData.map((slide, index) => (
+            <div key={index} className='sentence'>
+              <p>{slide.description1}</p>
+            </div>
+          ))}
           </div>
           <div className='sentence'>
-            <p>Slide 2</p>
+          {carouselData.map((slide, index) => (
+            <div key={index} className='sentence'>
+              <p>{slide.description2}</p>
+            </div>
+          ))}
           </div>
           <div className='sentence'>
-            <p>Slide 3</p>
+          {carouselData.map((slide, index) => (
+            <div key={index} className='sentence'>
+              <p>{slide.description3}</p>
+            </div>
+          ))}
           </div>
         </Slider>
       </div>

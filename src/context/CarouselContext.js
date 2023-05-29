@@ -22,6 +22,14 @@ export const carouselReducer = (state, action) => {
             return {
                 carousel: state.carousel.filter((b) => b._id !== action.payload._id)
             }
+
+            case 'UPDATE_CAROUSEL_DATA':
+                return {
+                  carousel: state.carousel.map((carouselItem) =>
+                    carouselItem._id === action.payload._id ? action.payload : carouselItem
+                  ),
+                };
+          
         
         default:
             return state
