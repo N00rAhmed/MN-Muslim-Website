@@ -9,7 +9,7 @@ function findMasjid() {
 
   return (
     <div>
-      <Nav />
+      {/* <Nav /> */}
       <h1>findMasjid</h1>
 
       <div className='home'>

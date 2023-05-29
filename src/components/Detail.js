@@ -18,7 +18,7 @@ function Detail() {
 
   return (
     <div>
-      <Nav />
+      {/* <Nav /> */}
       <h1>Detail Page</h1>
 
       <p>

@@ -41,7 +41,7 @@ const Home = ({ carousel }) => {
 
   useEffect(() => {
     // Fetch data from the API
-    fetch('http://localhost:4000/api/carousel')
+    fetch('https://mnmuslims-api.onrender.com/api/carousel')
       .then((response) => response.json())
       .then((data) => setCarouselData(data))
       .catch((error) => console.error(error));
@@ -59,7 +59,7 @@ const Home = ({ carousel }) => {
 
   return (
     <div>
-      <Nav />
+      {/* <Nav /> */}
       {/* <div className='title'>
         <h1>Home</h1>
       </div> */}

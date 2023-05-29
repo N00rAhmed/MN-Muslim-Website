@@ -13,7 +13,7 @@ const  AdminAnnouncements = () => {
 
   useEffect(() => {
     const fetchCarouselData = async () => {
-        const response = await fetch('/api/carousel')
+        const response = await fetch('https://mnmuslims-api.onrender.com/api/carousel')
         const json = await response.json()
 
         if (response.ok) {

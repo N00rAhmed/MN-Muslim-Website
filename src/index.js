@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Routing from './components/Routing.js';
+import Routing from './Routing';
 import { BusinessContextProvider } from './context/BusinessContext.js';
 import { CarouselContextProvider } from './context/CarouselContext.js';
 
@@ -10,7 +10,7 @@ root.render(
   <React.StrictMode>
     <BusinessContextProvider>
       <CarouselContextProvider>
-      <Routing />
+        <Routing />
       </CarouselContextProvider>
     </BusinessContextProvider>
   </React.StrictMode>

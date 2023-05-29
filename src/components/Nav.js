@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import '../styles/nav.css';
 import Mnmuslims from '../images/minnesota-muslims-logo.jpg';
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -16,6 +17,7 @@ const Nav = () => {
         <li><a href="/about">About</a></li>
         <li><a href="/directory">Directory</a></li>
         <li><a href="/contact">Contact</a></li>
+
       </ul>
     </nav>
   );

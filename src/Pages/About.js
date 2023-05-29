@@ -7,7 +7,7 @@ function About() {
   return (
     <div>
       
-      <Nav />
+      {/* <Nav /> */}
       <div className="image-container">
         <img src={Suhbah} className="suhbah-logo" alt="logo" />
       </div>

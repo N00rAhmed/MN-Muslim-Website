@@ -15,7 +15,7 @@ function Admin() {
 
     useEffect(() => {
         const fetchBusinesses = async () => {
-            const response = await fetch('/api/businesses')
+            const response = await fetch('https://mnmuslims-api.onrender.com/api/businesses')
             const json = await response.json()
 
             if (response.ok) {
@@ -27,7 +27,7 @@ function Admin() {
 
   return (
     <div>
-        <Nav/>
+        {/* <Nav/> */}
         <h2>Admin Page</h2>
 
         <button onClick={() => navigate("/AdminAnnouncement")}>Announcement</button>

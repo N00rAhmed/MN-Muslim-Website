@@ -43,7 +43,7 @@ const Contact = () => {
 
   return (
     <div>
-      <Nav />
+      {/* <Nav /> */}
       <div className="contact-page">
       <h1>Contact Us</h1>
       <form className="contact-form" onSubmit={handleSubmit}>

@@ -8,7 +8,7 @@ const BusinessDetails = ({ business }) => {
   const navigate = useNavigate(); // Initialize the useNavigate hook
 
   const handleClick = async () => {
-    const response = await fetch('http://localhost:4000/api/businesses/' + business._id, {
+    const response = await fetch('https://mnmuslims-api.onrender.com/api/businesses' + business._id, {
       method: 'DELETE'
     });
     const json = await response.json();

@@ -1,24 +1,26 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import About from '../Pages/About';
-import Home from '../Pages/Home';
-import Contact from '../Pages/Contact';
-import Directory from '../Pages/Directory';
-import Admin from '../Pages/Admin';
-import Masjid from '../Pages/findMasjid';
-import Business from '../Pages/findBusiness';
-import Footer from './Footer';
-import Footer2 from './Footer2';
-import PublicViewingDetails from './PublicViewingDetails';
-import DetailMasjid from './DetailMasjid';
-import BusinessForm from '../components/BusinessForm.js';
-import Detail from './Detail';
-import AdminAnnouncement from '../Pages/AdminAnnouncement';
-import CarouselForm from '../components/CarouselForm'
+import About from './Pages/About';
+import Home from './Pages/Home';
+import Contact from './Pages/Contact';
+import Directory from './Pages/Directory';
+import Admin from './Pages/Admin';
+import Masjid from './Pages/findMasjid';
+import Business from './Pages/findBusiness';
+import Footer from './components/Footer';
+import Footer2 from './components/Footer2';
+import PublicViewingDetails from './components/PublicViewingDetails';
+import DetailMasjid from './components/DetailMasjid';
+import BusinessForm from './components/BusinessForm.js';
+import Detail from './components/Detail';
+import AdminAnnouncement from './Pages/AdminAnnouncement';
+import CarouselForm from './components/CarouselForm'
+import Nav from './components/Nav';
 
 function Routing() {
   return (
     <BrowserRouter>
+    <Nav />
     <Routes>
         <Route
             path="/"

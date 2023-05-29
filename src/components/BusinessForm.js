@@ -25,7 +25,7 @@ const BusinessForm = () => {
 
         const business = {title, description, address, number, services, links, email, workingHours}
 
-        const response = await fetch('http://localhost:4000/api/businesses', {
+        const response = await fetch('https://mnmuslims-api.onrender.com/api/businesses', {
             method: 'POST',
             body: JSON.stringify(business),
             headers: {

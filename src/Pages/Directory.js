@@ -12,7 +12,7 @@ function Directory() {
 
   useEffect(() => {
       const fetchBusinesses = async () => {
-          const response = await fetch('/api/businesses')
+          const response = await fetch('https://mnmuslims-api.onrender.com/api/businesses')
           const json = await response.json()
 
           if (response.ok) {
@@ -24,7 +24,7 @@ function Directory() {
 
   return (
     <div>
-      <Nav/>
+      {/* <Nav/> */}
       <h1>Directory</h1>
       <p>This is the directory page.</p>
       <div className='links'>
