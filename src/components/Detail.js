@@ -8,8 +8,9 @@ function Detail() {
 
   const title = params.get('title');
   const description = params.get('description');
-  const address = params.get('Address');
+  const address = params.get('address');
   const number = params.get('number');
+  const email = params.get('email');
   const services = params.get('services');
   const links = params.get('links');
   const workingHours = params.get('workingHours');
@@ -36,6 +37,10 @@ function Detail() {
         <strong>Phone number: </strong>
         {number}
       </p>
+      {/* <p>
+        <strong>Email: </strong>
+        {email}
+      </p> */}
       {/* Render other post details */}
     </div>
   );

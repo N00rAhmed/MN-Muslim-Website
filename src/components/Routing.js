@@ -13,6 +13,8 @@ import PublicViewingDetails from './PublicViewingDetails';
 import DetailMasjid from './DetailMasjid';
 import BusinessForm from '../components/BusinessForm.js';
 import Detail from './Detail';
+import AdminAnnouncement from '../Pages/AdminAnnouncement';
+import CarouselForm from '../components/CarouselForm'
 
 function Routing() {
   return (
@@ -77,7 +79,18 @@ function Routing() {
             element={ <DetailMasjid /> }
         />
 
+        <Route
+            path="/AdminAnnouncement"
+            element={ <AdminAnnouncement /> }
+        />
+        
+        <Route
+            path="/CarouselForm"
+            element={ <CarouselForm /> }
+        />
 
+{/* CarouselForm.js */}
+{/* AdminAnnouncement */}
 {/* DetailMasjid */}
 {/* PublicViewingDetails */}
 {/* Footer2 */}

@@ -18,28 +18,9 @@ const BusinessDetails = ({ business }) => {
     }
   };
 
-
-  const postBusiness = async () => {
-    const response = await fetch('http://localhost:4000/api/businesses', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(business),
-    });
-    const json = await response.json();
-  
-    if (response.ok) {
-      dispatch({ type: 'ADD_BUSINESS', payload: json });
-    }
-  };
-  const POST = async () => {
-    await postBusiness(); // Post the data before redirecting
-    navigate('/findBusiness'); // Redirect to the findBusiness.js page
-  };
   
   const handlePostClick = () => {
-    navigate(`/detail?title=${encodeURIComponent(business.title)}&description=${encodeURIComponent(business.description)}&address=${encodeURIComponent(business.address)}&number=${encodeURIComponent(business.number)}&services=${encodeURIComponent(business.services)}&links=${encodeURIComponent(business.links)}&workingHours=${encodeURIComponent(business.workingHours)}&createdAt=${encodeURIComponent(business.createdAt)}`);
+    navigate(`/detail?title=${encodeURIComponent(business.title)}&description=${encodeURIComponent(business.description)}&address=${encodeURIComponent(business.address)}&number=${encodeURIComponent(business.number)}&services=${encodeURIComponent(business.services)}&links=${encodeURIComponent(business.links)}&email=${encodeURIComponent(business.email)}&workingHours=${encodeURIComponent(business.workingHours)}&createdAt=${encodeURIComponent(business.createdAt)}`);
   };
 
   return (
@@ -66,6 +47,11 @@ const BusinessDetails = ({ business }) => {
         <strong>links: </strong>
         <a href={business.links}>{business.links}</a>
       </p>
+      <p>
+        <strong>email: </strong>
+        {business.email}
+      </p>
+{/* email */}
 
       <p>
         <strong>working hours: </strong>

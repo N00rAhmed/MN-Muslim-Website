@@ -11,7 +11,55 @@
     display: flex;
     justify-content: center;
 } */
+.sentence{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #000;
+    z-index: 1; /* Add this line */
+  }
+  .carousel {
+    background-color: #b6ccd7;
+    height: 400px; /* Adjust the height as desired */
+    width: 100%; /* Adjust the width as desired */
+  }
+        
+  .next {
+    right: 20px;
+  }
+  
+  .prev {
+    left: 20px;
+  }
+  .carousel-container {
+    position: relative;
+    height: 100px;
+    width: 100%; 
+    background-color: #6097b3;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.473);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    border-radius: 10px;
+  }
+  
+  .carousel-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.664);
+  }
+  
 .about-button{
     display: flex;
     justify-content: center;

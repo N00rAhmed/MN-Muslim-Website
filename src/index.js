@@ -2,12 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Routing from './components/Routing.js';
 import { BusinessContextProvider } from './context/BusinessContext.js';
+import { CarouselContextProvider } from './context/CarouselContext.js';
+
 import Nav from './components/Nav.js';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BusinessContextProvider>
+      <CarouselContextProvider>
       <Routing />
+      </CarouselContextProvider>
     </BusinessContextProvider>
   </React.StrictMode>
 );

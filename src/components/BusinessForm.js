@@ -14,6 +14,7 @@ const BusinessForm = () => {
     const [number, setNumber] = useState('')
     const [services, setServices] = useState('')
     const [links, setLinks] = useState('')
+    const [email, setEmail] = useState('')
     const [workingHours, setWorkingHours] = useState('')
     const [error, setError] = useState(null)
 
@@ -22,7 +23,7 @@ const BusinessForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const business = {title, description, address, number, services, links, workingHours}
+        const business = {title, description, address, number, services, links, email, workingHours}
 
         const response = await fetch('http://localhost:4000/api/businesses', {
             method: 'POST',
@@ -43,6 +44,7 @@ const BusinessForm = () => {
             setNumber('')
             setServices('')
             setLinks('')
+            setEmail('')
             setWorkingHours('')
 
             setError(null)
@@ -106,6 +108,15 @@ const BusinessForm = () => {
             setLinks(e.target.value)}
             value={links}
             />
+
+            <label>email</label>
+            <input 
+            // type="text" 
+            onChange={(e) => 
+            setEmail(e.target.value)}
+            value={email}
+            />
+
 
             <label>working hours</label>
             <input 
