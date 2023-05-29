@@ -8,7 +8,7 @@ const PublicViewingMajids = () => {
   useEffect(() => {
     const fetchMasjids = async () => {
       try {
-        const response = await fetch('https://mnmuslims-api.onrender.com/api/masjids'); // Replace '/api/masjids' with your actual API endpoint
+        const response = await fetch('https://mnmuslims-api.onrender.com/api/masjids/'); // Replace '/api/masjids' with your actual API endpoint
         const data = await response.json();
         setMasjids(data);
       } catch (error) {

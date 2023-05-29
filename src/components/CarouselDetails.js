@@ -16,7 +16,7 @@ const CarouselDetails = ({ carousel }) => {
   }, [carousel]);
 
   const handleUpdate = async () => {
-    const response = await fetch('https://mnmuslims-api.onrender.com/api/carousel' + carousel._id, {
+    const response = await fetch('https://mnmuslims-api.onrender.com/api/carousel/' + carousel._id, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -35,13 +35,13 @@ const CarouselDetails = ({ carousel }) => {
   };
 
   const handleClick = async () => {
-    const response = await fetch('https://mnmuslims-api.onrender.com/api/carousel' + carousel._id, {
+    const response = await fetch('https://mnmuslims-api.onrender.com/api/carousel/' + carousel._id, {
       method: 'DELETE'
     });
     const json = await response.json();
 
     if (response.ok) {
-      dispatch({ type: 'DELETE_BUSINESS_CAROUSEL_DATA', payload: json });
+      dispatch({ type: 'DELETE_CAROUSEL_DATA', payload: json });
     }
   };
 
