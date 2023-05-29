@@ -41,7 +41,7 @@ const Home = ({ carousel }) => {
 
   useEffect(() => {
     // Fetch data from the API
-    fetch('https://mnmuslims-api.onrender.com/api/carousel')
+    fetch('https://mnmuslims-api.onrender.com/api/carousel/')
       .then((response) => response.json())
       .then((data) => setCarouselData(data))
       .catch((error) => console.error(error));

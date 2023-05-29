@@ -19,7 +19,7 @@ const CarouselForm = () => {
 
         const carousel = {description1, description2, description3}
 
-        const response = await fetch('https://mnmuslims-api.onrender.com/api/carousel', {
+        const response = await fetch('https://mnmuslims-api.onrender.com/api/carousel/', {
             method: 'POST',
             body: JSON.stringify(carousel),
             headers: {

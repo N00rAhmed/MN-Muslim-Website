@@ -18,7 +18,7 @@ const SearchBusiness = () => {
   // Fetch data from API
   const fetchData = () => {
     // Replace 'YOUR_API_ENDPOINT' with the actual endpoint of your API
-    fetch('https://mnmuslims-api.onrender.com/api/businesses')
+    fetch('https://mnmuslims-api.onrender.com/api/businesses/')
       .then(response => response.json())
       .then(data => {
         setBusinesses(data);

@@ -18,7 +18,7 @@ export const carouselReducer = (state, action) => {
             return {
                 carousel: [action.payload, ...state.carousel]
             }
-        case 'DELETE_BUSINESS_CAROUSEL_DATA':
+        case 'DELETE_CAROUSEL_DATA':
             return {
                 carousel: state.carousel.filter((b) => b._id !== action.payload._id)
             }
