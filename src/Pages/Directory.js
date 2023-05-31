@@ -26,16 +26,21 @@ function Directory() {
     <div>
       {/* <Nav/> */}
       <h1>Directory</h1>
-      <p>This is the directory page.</p>
       <div className='links'>
         <a href='/findMasjid'><p>All Masjids</p></a>
+        </div>
+      <div className='links'>
         <a href='/findBusiness'><p>All Businesses</p></a>
-        {/* <p href="/findMasjid">Find Masjid</p> */}
-        <SearchFilter/>
-        <MasjidSearchFilter/>
       </div>
+        {/* <a href='/findBusiness'><p>All Businesses</p></a> */}
+        {/* <p href="/findMasjid">Find Masjid</p> */}
+        <div className='searchfilter'>
+          <SearchFilter/>
+        </div>
+        <div className='searchfilter'>
+          <MasjidSearchFilter/>
+        </div>
       
-      <Footer/>
     </div>
   )
 }

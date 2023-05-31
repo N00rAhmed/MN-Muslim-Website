@@ -42,7 +42,7 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div className='website'>
       {/* <Nav /> */}
       <div className="contact-page">
       <h1>Contact Us</h1>
@@ -62,7 +62,6 @@ const Contact = () => {
         {errorMessage && <div className="error-message">{errorMessage}</div>}
       </form>
     </div>
-<Footer/>
     </div>
   );
 };

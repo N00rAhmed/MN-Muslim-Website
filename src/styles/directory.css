@@ -1,6 +1,21 @@
 /* p{
     cursor: pointer;
 } */
+.links{
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    /* background-color: aqua; */
+}
+
+.searchfilter{
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    /* background-color: aqua; */
+
+}
+
 link p{
     color:rgb(36, 85, 158);
 }

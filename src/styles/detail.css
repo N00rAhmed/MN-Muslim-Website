@@ -1,0 +1,7 @@
+.company-information{
+    background-color: rgb(179, 223, 223);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}

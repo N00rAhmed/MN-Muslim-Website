@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { UseBusinessesContext } from '../hooks/UseBusinessesContext';
 import BusinessPage from '../Pages/findBusiness';
-import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
+import { useNavigate } from 'react-router-dom';
 
 const BusinessDetails = ({ business }) => {
   const { dispatch } = UseBusinessesContext();
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const navigate = useNavigate();
 
   const handleClick = async () => {
     const response = await fetch('https://mnmuslims-api.onrender.com/api/businesses/' + business._id, {
@@ -51,7 +51,6 @@ const BusinessDetails = ({ business }) => {
         <strong>email: </strong>
         {business.email}
       </p>
-{/* email */}
 
       <p>
         <strong>working hours: </strong>
@@ -61,9 +60,8 @@ const BusinessDetails = ({ business }) => {
 
       <span onClick={handleClick}>delete</span>
 
-      <button onClick={handlePostClick}>detail</button>
+      <button onClick={handlePostClick}>Info</button>
       
-      {/* <button onClick={POST}>post</button> */}
 
     </div>
   );

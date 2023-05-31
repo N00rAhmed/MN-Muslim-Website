@@ -6,6 +6,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import '../styles/home.css';
+
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { UseCarouselContext } from '../hooks/UseCarouselContext';
@@ -58,7 +59,7 @@ const Home = ({ carousel }) => {
   };
 
   return (
-    <div>
+    <div className='website'>
       {/* <Nav /> */}
       {/* <div className='title'>
         <h1>Home</h1>
@@ -111,7 +112,6 @@ const Home = ({ carousel }) => {
         <button onClick={() => navigate("/contact")}>Join</button>
       </div>
       <br />
-      <Footer />
     </div>
   )
 }

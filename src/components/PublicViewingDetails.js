@@ -82,7 +82,8 @@ const PublicViewingDetails = ({ business }) => {
   
         {/* <span onClick={handleClick}>delete</span> */}
   
-        <button onClick={handlePostClick}>detail</button>
+        <button onClick={handlePostClick}>Info</button>
+
         
         {/* <button onClick={POST}>post</button> */}
   

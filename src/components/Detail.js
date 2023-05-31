@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from '../components/Nav.js';
 import { useLocation } from 'react-router-dom';
+import '../styles/detail.css';
 
 function Detail() {
   const location = useLocation();
@@ -17,14 +18,14 @@ function Detail() {
   const createdAt = params.get('createdAt');
 
   return (
-    <div>
+    <div className='company-information'>
       {/* <Nav /> */}
-      <h1>Detail Page</h1>
+      {/* <h1>More Information</h1> */}
 
-      <p>
-        <strong>Title: </strong>
+      <h2>
+        {/* <strong>Title: </strong> */}
         {title}
-      </p>
+      </h2>
       <p>
         <strong>Description: </strong>
         {description}
@@ -37,6 +38,26 @@ function Detail() {
         <strong>Phone number: </strong>
         {number}
       </p>
+      <p>
+        <strong>Services: </strong>
+        {services}
+      </p>
+      <p>
+        <strong>Links: </strong>
+        <a href={links}>{links}</a>
+        {/* {links} */}
+      </p>
+      <p>
+        <strong>Email: </strong>
+        {email}
+      </p>
+      <p>
+        <strong>Working Hours: </strong>
+        {workingHours}
+      </p>
+
+
+
       {/* <p>
         <strong>Email: </strong>
         {email}

@@ -11,6 +11,9 @@
     display: flex;
     justify-content: center;
 } */
+.website{
+  background-color: rgb(179, 223, 223);
+}
 .sentence{
     display: flex;
     justify-content: center;
