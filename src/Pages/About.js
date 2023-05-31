@@ -3,9 +3,11 @@ import Nav from '../components/Nav.js';
 import '../styles/about.css';
 import Footer from '../components/Footer'
 import Suhbah from '../images/suhbah-collective-logo.png';
+// import LocalAtmIcon from '@mui/icons-material/LocalAtm';
+
 function About() {
   return (
-    <div>
+    <div className='website'>
       
       {/* <Nav /> */}
       <div className="image-container">
@@ -21,6 +23,7 @@ function About() {
         <div className='border'>
           <div className='image-container'>
             <p>IMAGE</p>
+            {/* <LocalAtmIcon/> */}
             <strong>To promote a sense of community amongst members of the Islamic faith and their affiliates within the state of Minnesota: instilling a sense of pride for their faith. </strong>
             </div>
 
@@ -42,7 +45,6 @@ function About() {
       </div>
       <br/>
       
-      <Footer/>
 
     </div>
   )

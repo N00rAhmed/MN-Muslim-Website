@@ -101,6 +101,8 @@ function Routing() {
 
 
     </Routes>
+    
+    <Footer />
 </BrowserRouter>
 )
 }

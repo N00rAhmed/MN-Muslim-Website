@@ -4,11 +4,8 @@ import PublicViewingMajids from '../components/PublicViewingMajids.js';
 
 function findMasjid() {
 
- 
-
-
   return (
-    <div>
+    <div className='website'>
       {/* <Nav /> */}
       <h1>findMasjid</h1>
 

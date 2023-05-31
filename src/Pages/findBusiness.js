@@ -27,7 +27,7 @@ function FindBusiness() {
 
 
   return (
-    <div>
+    <div className='website'>
       {/* <Nav /> */}
       <h1>findBusiness</h1>
       <div className='home'>
