@@ -12,6 +12,7 @@ import PublicViewingDetails from '../components/PublicViewingDetails';
 function FindBusiness() {
 
   const {businesses, dispatch} = UseBusinessesContext()
+  const navigate = useNavigate(); // Initialize the useNavigate hook
 
   useEffect(() => {
       const fetchBusinesses = async () => {
@@ -25,11 +26,15 @@ function FindBusiness() {
       fetchBusinesses()
   }, [])
 
+  const handlePostClick = (business) => {
+    navigate(`/detail?title=${encodeURIComponent(business.title)}&description=${encodeURIComponent(business.description)}&address=${encodeURIComponent(business.address)}&number=${encodeURIComponent(business.number)}&services=${encodeURIComponent(business.services)}&links=${encodeURIComponent(business.links)}&workingHours=${encodeURIComponent(business.workingHours)}&createdAt=${encodeURIComponent(business.createdAt)}`);
+  };
+
 
   return (
     <div className='website'>
       {/* <Nav /> */}
-      <h1>findBusiness</h1>
+      <h1>Find A Business</h1>
       <div className='home'>
             <div className='workouts'>
                 {businesses && businesses.map((business) => (

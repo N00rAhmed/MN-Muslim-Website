@@ -42,25 +42,27 @@ const PublicViewingDetails = ({ business }) => {
     // };
     
     const handlePostClick = () => {
-      navigate(`/detail?title=${encodeURIComponent(business.title)}&description=${encodeURIComponent(business.description)}&address=${encodeURIComponent(business.address)}&number=${encodeURIComponent(business.number)}&services=${encodeURIComponent(business.services)}&links=${encodeURIComponent(business.links)}&workingHours=${encodeURIComponent(business.workingHours)}&createdAt=${encodeURIComponent(business.createdAt)}`);
+      navigate(`/detail?title=${encodeURIComponent(business.title)}&description=${encodeURIComponent(business.description)}&address=${encodeURIComponent(business.address)}&number=${encodeURIComponent(business.number)}&services=${encodeURIComponent(business.services)}&links=${encodeURIComponent(business.links)}&workingHours=${encodeURIComponent(business.workingHours)}&email=${encodeURIComponent(business.email)}&createdAt=${encodeURIComponent(business.createdAt)}`);
     };
   
     return (
       <div className="workout-details">
   
-        <h4>{business.title}</h4>
+  <a href="#" onClick={() => handlePostClick(business)}>
+                  <h4>{business.title}</h4>
+                </a>
         <p>
           <strong>description: </strong>
           {business.description}
         </p>
-        <p>
+        {/* <p>
           <strong>address: </strong>
           {business.address}
         </p>
         <p>
           <strong>phone number: </strong>
           {business.number}
-        </p>
+        </p> */}
         <p>
           <strong>services: </strong>
           {business.services}
@@ -74,15 +76,16 @@ const PublicViewingDetails = ({ business }) => {
           {business.email}
         </p>
 
-        <p>
+        {/* <p>
           <strong>working hours: </strong>
           {business.workingHours}
-        </p>
+        </p> */}
+
         <p>{business.createdAt}</p>
   
         {/* <span onClick={handleClick}>delete</span> */}
   
-        <button onClick={handlePostClick}>Info</button>
+        {/* <button onClick={handlePostClick}>Info</button> */}
 
         
         {/* <button onClick={POST}>post</button> */}

@@ -18,13 +18,19 @@ const PublicViewingMajids = () => {
 
     fetchMasjids();
   }, []);
+  
+  const handlePostClickMasjid = (masjid) => {
+    navigate(`/detailmasjid?Name=${encodeURIComponent(masjid.Name)}&address=${encodeURIComponent(masjid.Address)}&address=${encodeURIComponent(masjid.Address)}`);
+  };
 
   return (
     <div>
       {masjids.map((masjid) => (
         <div key={masjid._id} className="workout-details">
 
-          <h4>{masjid.Name}</h4>
+<a href="#" onClick={() => handlePostClickMasjid(masjid)}>
+                    <h4>{masjid.Name}</h4>
+                </a>
           <p>
             <strong>Address: </strong>
             {masjid.Address}
