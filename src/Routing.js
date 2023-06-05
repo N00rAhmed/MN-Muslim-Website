@@ -3,12 +3,11 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import About from './Pages/About';
 import Home from './Pages/Home';
 import Contact from './Pages/Contact';
-import Directory from './Pages/Directory';
+// import Directory from './Pages/Directory';
 import Admin from './Pages/Admin';
 import Masjid from './Pages/findMasjid';
 import Business from './Pages/findBusiness';
 import Footer from './components/Footer';
-import Footer2 from './components/Footer2';
 import PublicViewingDetails from './components/PublicViewingDetails';
 import DetailMasjid from './components/DetailMasjid';
 import BusinessForm from './components/BusinessForm.js';
@@ -16,6 +15,7 @@ import Detail from './components/Detail';
 import AdminAnnouncement from './Pages/AdminAnnouncement';
 import CarouselForm from './components/CarouselForm'
 import Nav from './components/Nav';
+import Directory from './Pages/Directory';
 
 function Routing() {
   return (
@@ -61,10 +61,6 @@ function Routing() {
             path="/form"
             element={ <BusinessForm /> }
         />
-        <Route
-            path="/footer2"
-            element={ <Footer2 /> }
-        />
 
         <Route
             path="/detail"
@@ -90,7 +86,12 @@ function Routing() {
             path="/CarouselForm"
             element={ <CarouselForm /> }
         />
+        {/* <Route
+            path="/new"
+            element={ <NewPage /> }
+        /> */}
 
+{/* NewPage */}
 {/* CarouselForm.js */}
 {/* AdminAnnouncement */}
 {/* DetailMasjid */}

@@ -11,6 +11,25 @@
     display: flex;
     justify-content: center;
 } */
+
+.about-button button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.join-button button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 .website{
   background-color: rgb(179, 223, 223);
 }
@@ -86,6 +105,9 @@ h3{
     justify-content: center;
 }
 .line{
-    display: flex;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

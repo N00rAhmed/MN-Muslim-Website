@@ -80,6 +80,10 @@ const Home = ({ carousel }) => {
           {carouselData.map((slide, index) => (
             <div key={index} className='sentence'>
               <p>{slide.description1}</p>
+              {slide.image1 && (
+                <img src={slide.image1} />
+              )}
+
             </div>
           ))}
           </div>
@@ -106,7 +110,7 @@ const Home = ({ carousel }) => {
       <div className='about-button'>
         <button onClick={() => navigate("/about")}>About</button>
       </div>
-      <h1>Join today</h1>
+      <h3>Join Today</h3>
       <p className='line'>Want to be part of this effort to create an online hub for the community? Then join us now.</p>
       <div className='join-button'>
         <button onClick={() => navigate("/contact")}>Join</button>

@@ -10,6 +10,10 @@ const CarouselForm = () => {
     const [description1, setDescription1] = useState('')
     const [description2, setDescription2] = useState('')
     const [description3, setDescription3] = useState('')
+
+    const [image1, setImage1] = useState('')
+
+
     const [error, setError] = useState(null)
 
     let navigate = useNavigate();
@@ -17,7 +21,7 @@ const CarouselForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const carousel = {description1, description2, description3}
+        const carousel = {description1, description2, description3, image1}
 
         const response = await fetch('https://mnmuslims-api.onrender.com/api/carousel/', {
             method: 'POST',
@@ -35,6 +39,7 @@ const CarouselForm = () => {
             setDescription1('')
             setDescription2('')
             setDescription3('')
+            setImage1('')
 
             setError(null)
             console.log('new annoucement added', json)
@@ -57,6 +62,19 @@ const CarouselForm = () => {
     setDescription1(e.target.value)}
     value={description1}
     />
+
+    <label>Image1</label>
+    <input
+    type="file"
+    accept="image/*"
+    onChange={(e) => 
+    setImage1(e.target.value)}
+        // type="text" 
+    // onChange={(e) => 
+    // setImage1(e.target.value)}
+    value={image1}
+    />
+
 
     <label>description2</label>
     <input 

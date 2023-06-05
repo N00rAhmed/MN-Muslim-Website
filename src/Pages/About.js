@@ -21,24 +21,22 @@ function About() {
       
       <div className="border-container">
         <div className='border'>
-          <div className='image-container'>
-            <p>IMAGE</p>
+          <div className='text-container'>
+            <h3>Fellowship</h3>
             {/* <LocalAtmIcon/> */}
             <strong>To promote a sense of community amongst members of the Islamic faith and their affiliates within the state of Minnesota: instilling a sense of pride for their faith. </strong>
             </div>
 
           </div>
           <div className='border'>
-          <div className='image-container'>
-            <p>IMAGE</p>
-
+          <div className='text-container'>
+            <h3>Financial Wellness</h3>
             <strong>To promote financial stability and independence amongst the collective’s members and to escape the grasp of usury and unlawful finances. </strong>
           </div>
           </div>
           <div className='border'>
-          <div className='image-container'>
-            <p>IMAGE</p>
-
+          <div className='text-container'>
+            <h3>Community</h3>
             <strong>To develop the communities of the collective’s members and provide services offered in a muslim friendly environment.</strong>
           </div>
           </div>

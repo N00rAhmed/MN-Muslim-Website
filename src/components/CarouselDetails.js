@@ -8,11 +8,13 @@ const CarouselDetails = ({ carousel }) => {
   const [updatedDescription1, setUpdatedDescription1] = useState('');
   const [updatedDescription2, setUpdatedDescription2] = useState('');
   const [updatedDescription3, setUpdatedDescription3] = useState('');
+  const [updatedImage1, setUpdatedImage1] = useState('');
 
   useEffect(() => {
     setUpdatedDescription1(carousel.description1);
     setUpdatedDescription2(carousel.description2);
     setUpdatedDescription3(carousel.description3);
+    setUpdatedImage1(carousel.image1);
   }, [carousel]);
 
   const handleUpdate = async () => {
@@ -25,6 +27,7 @@ const CarouselDetails = ({ carousel }) => {
         description1: updatedDescription1,
         description2: updatedDescription2,
         description3: updatedDescription3,
+        image1: updatedImage1
       }),
     });
     const json = await response.json();
@@ -32,6 +35,7 @@ const CarouselDetails = ({ carousel }) => {
     if (response.ok) {
       dispatch({ type: 'UPDATE_CAROUSEL_DATA', payload: json });
     }
+    navigate('/')
   };
 
   const handleClick = async () => {
@@ -55,6 +59,11 @@ const CarouselDetails = ({ carousel }) => {
         {carousel.description1}
       </p>
       <p>
+        <strong>image1: </strong>
+        {carousel.image1}
+      </p>
+
+      <p>
         <strong>description2: </strong>
         {carousel.description2}
       </p>
@@ -68,6 +77,13 @@ const CarouselDetails = ({ carousel }) => {
         value={updatedDescription1}
         onChange={(e) => setUpdatedDescription1(e.target.value)}
       />
+      
+      <input
+        type="text"
+        value={updatedImage1}
+        onChange={(e) => setUpdatedImage1(e.target.value)}
+      />
+
       <input
         type="text"
         value={updatedDescription2}
@@ -78,6 +94,7 @@ const CarouselDetails = ({ carousel }) => {
         value={updatedDescription3}
         onChange={(e) => setUpdatedDescription3(e.target.value)}
       />
+      
       <button onClick={handleUpdate}>Update</button>
 
       <span onClick={handleClick}>delete</span>
