@@ -11,7 +11,19 @@
     display: flex;
     justify-content: center;
 } */
+.sub-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
+}
+.small-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 .about-button button {
   padding: 0.5rem 1rem;
   background-color: #007bff;

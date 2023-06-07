@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
@@ -8,7 +8,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import '../styles/home.css';
 
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import { UseCarouselContext } from '../hooks/UseCarouselContext';
 
 import { Carousel } from 'react-responsive-carousel';
@@ -36,15 +35,19 @@ const PrevArrow = (props) => {
   );
 };
 
-const Home = ({ carousel }) => {
+const Home = () => {
   let navigate = useNavigate();
   const [carouselData, setCarouselData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Fetch data from the API
-    fetch('https://mnmuslims-api.onrender.com/api/carousel/')
+    fetch('http://localhost:4000/api/carousel/')
       .then((response) => response.json())
-      .then((data) => setCarouselData(data))
+      .then((data) => {
+        setCarouselData(data);
+        setIsLoading(false); // Set loading state to false after data is fetched
+      })
       .catch((error) => console.error(error));
   }, []);
 
@@ -75,33 +78,34 @@ const Home = ({ carousel }) => {
       {/* <h2>Announcements</h2> */}
 
       <div className="carousel-container">
-        <Slider {...settings}>
-          <div className='sentence'>
-          {carouselData.map((slide, index) => (
-            <div key={index} className='sentence'>
-              <p>{slide.description1}</p>
-              {slide.image1 && (
-                <img src={slide.image1} />
-              )}
-
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <Slider {...settings}>
+            <div className='sentence'>
+              {carouselData.map((slide, index) => (
+                <div key={index} className='sentence'>
+                  <p>{slide.description1}</p>
+                  {slide.image1 && <img src={slide.image1} />}
+                </div>
+              ))}
             </div>
-          ))}
-          </div>
-          <div className='sentence'>
-          {carouselData.map((slide, index) => (
-            <div key={index} className='sentence'>
-              <p>{slide.description2}</p>
+            <div className='sentence'>
+              {carouselData.map((slide, index) => (
+                <div key={index} className='sentence'>
+                  <p>{slide.description2}</p>
+                </div>
+              ))}
             </div>
-          ))}
-          </div>
-          <div className='sentence'>
-          {carouselData.map((slide, index) => (
-            <div key={index} className='sentence'>
-              <p>{slide.description3}</p>
+            <div className='sentence'>
+              {carouselData.map((slide, index) => (
+                <div key={index} className='sentence'>
+                  <p>{slide.description3}</p>
+                </div>
+              ))}
             </div>
-          ))}
-          </div>
-        </Slider>
+          </Slider>
+        )}
       </div>
 
       
@@ -117,7 +121,7 @@ const Home = ({ carousel }) => {
       </div>
       <br />
     </div>
-  )
-}
+  );
+};
 
 export default Home;

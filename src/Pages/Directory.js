@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/admin.css';
-import '../styles/directory.css'
-import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
+import '../styles/directory.css';
+import { useNavigate } from 'react-router-dom';
 
 function NewPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -10,9 +10,9 @@ function NewPage() {
   const [masjids, setMasjids] = useState([]);
   const [filteredBusinesses, setFilteredBusinesses] = useState([]);
   const [filteredMasjids, setFilteredMasjids] = useState([]);
+  const [isLoading, setIsLoading] = useState(true); // Add loading state
 
-  const navigate = useNavigate(); // Initialize the useNavigate hook
-
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchData();
@@ -28,6 +28,8 @@ function NewPage() {
 
       setMasjids(masjidsResponse.data);
       setFilteredMasjids(masjidsResponse.data);
+
+      setIsLoading(false); // Set loading state to false after data is fetched
     } catch (error) {
       console.error('API error:', error);
     }
@@ -49,127 +51,123 @@ function NewPage() {
     setFilteredMasjids(filteredMasjids);
   }, [searchTerm, masjids]);
 
-
   const handlePostClick = (business) => {
-    navigate(`/detail?title=${encodeURIComponent(business.title)}&description=${encodeURIComponent(business.description)}&address=${encodeURIComponent(business.address)}&number=${encodeURIComponent(business.number)}&services=${encodeURIComponent(business.services)}&links=${encodeURIComponent(business.links)}&workingHours=${encodeURIComponent(business.workingHours)}&email=${encodeURIComponent(business.email)}&createdAt=${encodeURIComponent(business.createdAt)}`);
+    navigate(`/detail?title=${encodeURIComponent(business.title)}&description=${encodeURIComponent(
+      business.description
+    )}&address=${encodeURIComponent(business.address)}&number=${encodeURIComponent(
+      business.number
+    )}&services=${encodeURIComponent(business.services)}&links=${encodeURIComponent(
+      business.links
+    )}&workingHours=${encodeURIComponent(business.workingHours)}&email=${encodeURIComponent(
+      business.email
+    )}&createdAt=${encodeURIComponent(business.createdAt)}`);
   };
 
   const handlePostClickMasjid = (masjid) => {
-    navigate(`/detailmasjid?Name=${encodeURIComponent(masjid.Name)}&address=${encodeURIComponent(masjid.Address)}`);
+    navigate(`/detailmasjid?Name=${encodeURIComponent(masjid.Name)}&address=${encodeURIComponent(
+      masjid.Address
+    )}`);
   };
 
-
   return (
-    <div className='website'>
-
-    <h1>Directory</h1>
-    <div className='links'>
-        <a href='/findMasjid'><p>All Masjids</p></a>
-        </div>
-      <div className='links'>
-        <a href='/findBusiness'><p>All Businesses</p></a>
+    <div className="website">
+      <h1>Directory</h1>
+      <div className="links">
+        <a href="/findMasjid">
+          <p>All Masjids</p>
+        </a>
       </div>
-
-      <input
-        type="text"
-        placeholder="Search"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-
-      <h2>Businesses</h2>
-      <ul>
-      <div className='home'>
-            <div className='workouts'>
-            {filteredBusinesses.map((business) => (
-          <div className='workout-details' key={business._id}>
-                <a href="#" onClick={() => handlePostClick(business)}>
-                  <h4>{business.title}</h4>
-                </a>
-        <p>
-          <strong>description: </strong>
-          {business.description}
-        </p>
-        {/* <p>
-          <strong>address: </strong>
-          {business.address}
-        </p>
-        <p>
-          <strong>phone number: </strong>
-          {business.number}
-        </p> */}
-        <p>
-          <strong>services: </strong>
-          {business.services}
-        </p>
-        <p>
-          <strong>links: </strong>
-          <a href={business.links}>{business.links}</a>
-        </p>
-        <p>
-          <strong>email: </strong>
-          {business.email}
-        </p>
-
-        {/* <p>
-          <strong>working hours: </strong>
-          {business.workingHours}
-        </p> */}
-        <p>{business.createdAt}</p>
-
-        {/* <button onClick={() => handlePostClick(business)}>detail</button> */}
-
-          </div>
-        ))}
-
-</div>
-</div>
-      </ul>
-
-      <h2>Masjids</h2>
-      <ul>
-      <div className='home'>
-        <div className='workouts'>
-
-        {filteredMasjids.map((masjid) => (
-          <div className="workout-details"key={masjid._id}>
-                <a href="#" onClick={() => handlePostClickMasjid(masjid)}>
-                    <h4>{masjid.Name}</h4>
-                </a>
-
-          <p>
-            <strong>Address: </strong>
-            {masjid.Address}
-          </p>
-        <p>
-            <strong>Jumuah Timings/Language: </strong>
-            {masjid['JumuahTimings/Language']}
-          </p>
-          <p>
-            <strong>DailySalat(Yes/No): </strong>
-            {masjid['DailySalat(Yes/No)']}
-          </p>
-          <p>
-            <strong>Organization Info: </strong>
-            {masjid.OrganizationInfo}
-          </p>
-          <p>
-            <strong>Additional Notes: </strong>
-            {masjid.AdditionalNotes}
-          </p>
-          <p>
-            <strong>Contact Info: </strong>
-            {masjid['ContactInfo/Person']}
-          </p>
-
-
-        {/* <button onClick={() => handlePostClickMasjid(masjid)}>detail</button> */}
-
-          </div>
-        ))}
+      <div className="links">
+        <a href="/findBusiness">
+          <p>All Businesses</p>
+        </a>
+      </div>
+      <div className='search-field'>
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
         </div>
-        </div>
-      </ul>
+
+
+      {isLoading ? ( // Conditionally render loading text or content
+        <p>Loading...</p>
+      ) : (
+        <>
+          <h2>Businesses</h2>
+          <ul>
+            <div className="home">
+              <div className="workouts">
+                {filteredBusinesses.map((business) => (
+                  <div className="workout-details" key={business._id}>
+                    <a href="#" onClick={() => handlePostClick(business)}>
+                      <h4>{business.title}</h4>
+                    </a>
+                    <p>
+                      <strong>description: </strong>
+                      {business.description}
+                    </p>
+                    <p>
+                      <strong>services: </strong>
+                      {business.services}
+                    </p>
+                    <p>
+                      <strong>links: </strong>
+                      <a href={business.links}>{business.links}</a>
+                    </p>
+                    <p>
+                      <strong>email: </strong>
+                      {business.email}
+                    </p>
+                    <p>{business.createdAt}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ul>
+
+          <h2>Masjids</h2>
+          <ul>
+          <div className="home">
+              <div className="workouts">
+                {filteredMasjids.map((masjid) => (
+                  <div className="workout-details" key={masjid._id}>
+                    <a href="#" onClick={() => handlePostClickMasjid(masjid)}>
+                      <h4>{masjid.Name}</h4>
+                    </a>
+                    <p>
+                      <strong>Address: </strong>
+                      {masjid.Address}
+                    </p>
+                    <p>
+                      <strong>Jumuah Timings/Language: </strong>
+                      {masjid['JumuahTimings/Language']}
+                    </p>
+                    <p>
+                      <strong>DailySalat(Yes/No): </strong>
+                      {masjid['DailySalat(Yes/No)']}
+                    </p>
+                    <p>
+                      <strong>Organization Info: </strong>
+                      {masjid.OrganizationInfo}
+                    </p>
+                    <p>
+                      <strong>Additional Notes: </strong>
+                      {masjid.AdditionalNotes}
+                    </p>
+                    <p>
+                      <strong>Contact Info: </strong>
+                      {masjid['ContactInfo/Person']}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ul>
+        </>
+      )}
     </div>
   );
 }
