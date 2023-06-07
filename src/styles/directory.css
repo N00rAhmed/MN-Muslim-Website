@@ -1,6 +1,16 @@
 /* p{
     cursor: pointer;
 } */
+
+.search-field input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* width: 50%; */
+    /* background-color: blue; */
+  }
+
 .links{
     display: flex;
     justify-content: center;
