@@ -16,6 +16,7 @@ import AdminAnnouncement from './Pages/AdminAnnouncement';
 import CarouselForm from './components/CarouselForm'
 import Nav from './components/Nav';
 import Directory from './Pages/Directory';
+import Test from './Pages/Test';
 
 function Routing() {
   return (
@@ -86,6 +87,14 @@ function Routing() {
             path="/CarouselForm"
             element={ <CarouselForm /> }
         />
+
+        <Route
+            path="/test"
+            element={ <Test /> }
+        />
+
+
+        {/* Test */}
         {/* <Route
             path="/new"
             element={ <NewPage /> }

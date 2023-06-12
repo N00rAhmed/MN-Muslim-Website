@@ -86,7 +86,6 @@ const Home = () => {
               {carouselData.map((slide, index) => (
                 <div key={index} className='sentence'>
                   <p>{slide.description1}</p>
-                  {slide.image1 && <img src={slide.image1} />}
                 </div>
               ))}
             </div>
