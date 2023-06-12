@@ -97,6 +97,10 @@ function NewPage() {
       ) : (
         <>
           <h2>Businesses</h2>
+          <div className='join-button'>
+        <button onClick={() => navigate("/form")}>Add Business</button>
+      </div>
+
           <ul>
             <div className="home">
               <div className="workouts">

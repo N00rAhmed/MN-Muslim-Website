@@ -57,7 +57,7 @@ const BusinessForm = () => {
 
     return(
         <form className="create" action="/findBusiness" method="POST" onSubmit={handleSubmit}>
-            <h3>Add a business</h3>
+            <h3>Add a Business</h3>
 
             <label>Name</label>
             <input 
