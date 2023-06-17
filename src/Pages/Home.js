@@ -38,6 +38,10 @@ const PrevArrow = (props) => {
 const Home = () => {
   let navigate = useNavigate();
   const [carouselData, setCarouselData] = useState([]);
+  const [imageData, setImageData] = useState([]);
+  const [imageData2, setImageData2] = useState([]);
+  const [imageData3, setImageData3] = useState([]);
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -49,6 +53,33 @@ const Home = () => {
         setIsLoading(false); // Set loading state to false after data is fetched
       })
       .catch((error) => console.error(error));
+
+
+      fetch('http://localhost:4000/uploads/')
+      .then((response) => response.json())
+      .then((image) => {
+        setImageData(image);
+        setIsLoading(false); // Set loading state to false after data is fetched
+      })
+      .catch((error) => console.error(error));
+
+      fetch('http://localhost:4000/uploads2/')
+      .then((response) => response.json())
+      .then((image) => {
+        setImageData2(image);
+        setIsLoading(false); // Set loading state to false after data is fetched
+      })
+      .catch((error) => console.error(error));
+
+      fetch('http://localhost:4000/uploads3/')
+      .then((response) => response.json())
+      .then((image) => {
+        setImageData3(image);
+        setIsLoading(false); // Set loading state to false after data is fetched
+      })
+      .catch((error) => console.error(error));
+
+
   }, []);
 
   const settings = {
@@ -83,13 +114,34 @@ const Home = () => {
         ) : (
           <Slider {...settings}>
             <div className='sentence'>
+
+            {imageData.map((slide, index) => (
+                <div key={index} className='sentence'>
+            <img src={slide.imageUrl} alt="Uploaded" style={{ width: 200, height: 200 }} />
+                  {/* {slide.image1 && <img src={slide.image1} />} */}
+                </div>
+                  ))}
+
+
               {carouselData.map((slide, index) => (
                 <div key={index} className='sentence'>
                   <p>{slide.description1}</p>
+                  {/* {slide.image1 && <img src={slide.image1} />} */}
                 </div>
+
+                
               ))}
             </div>
             <div className='sentence'>
+
+            {imageData2.map((slide, index) => (
+                <div key={index} className='sentence'>
+            <img src={slide.imageUrl2} alt="Uploaded" style={{ width: 200, height: 200 }} />
+                  {/* {slide.image1 && <img src={slide.image1} />} */}
+                </div>
+                  ))}
+
+
               {carouselData.map((slide, index) => (
                 <div key={index} className='sentence'>
                   <p>{slide.description2}</p>
@@ -97,6 +149,14 @@ const Home = () => {
               ))}
             </div>
             <div className='sentence'>
+
+            {imageData3.map((slide, index) => (
+                <div key={index} className='sentence'>
+            <img src={slide.imageUrl3} alt="Uploaded" style={{ width: 200, height: 200 }} />
+                  {/* {slide.image1 && <img src={slide.image1} />} */}
+                </div>
+                  ))}
+
               {carouselData.map((slide, index) => (
                 <div key={index} className='sentence'>
                   <p>{slide.description3}</p>

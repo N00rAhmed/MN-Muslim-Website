@@ -3,7 +3,7 @@ import axios from 'axios';
 import { UseImageContext } from '../hooks/UseImageContext';
 import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 
-const Test = ({ image }) => {
+const Test3 = ({ image }) => {
   const [file, setFile] = useState(null);
   const [images, setImages] = useState([]);
   const { dispatch } = UseImageContext();
@@ -15,7 +15,7 @@ const Test = ({ image }) => {
     // Fetch all images from the server
     const fetchImages = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/uploads');
+        const response = await axios.get('http://localhost:4000/uploads3');
         setImages(response.data);
       } catch (error) {
         console.error(error);
@@ -27,7 +27,7 @@ const Test = ({ image }) => {
   
   const handleClick = async (image) => {
     try {
-      await axios.delete(`http://localhost:4000/uploads/${image._id}`);
+      await axios.delete(`http://localhost:4000/uploads3/${image._id}`);
       dispatch({ type: 'DELETE_Image_Context', payload: image._id });
       setDeletedImageId(image._id); // Update the deletedImageId state
     } catch (error) {
@@ -46,7 +46,7 @@ const Test = ({ image }) => {
 // imagetwo
 
     try {
-      const response = await axios.post('http://localhost:4000/uploads', formData, {
+      const response = await axios.post('http://localhost:4000/uploads3', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -55,7 +55,7 @@ const Test = ({ image }) => {
       alert('Image uploaded successfully!');
       setFile(null);
       // Fetch all images again to update the list
-      const imagesResponse = await axios.get('http://localhost:4000/uploads');
+      const imagesResponse = await axios.get('http://localhost:4000/uploads3');
       setImages(imagesResponse.data);
     } catch (error) {
       console.error(error);
@@ -65,7 +65,7 @@ const Test = ({ image }) => {
 
   return (
     <div>
-      <h1>Image Uploader 1</h1>
+      <h1>Image Uploader 3</h1>
       <div style={{ width: 200, height: 200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         {file ? (
           <img src={URL.createObjectURL(file)} alt="Uploaded" style={{ width: '100%', height: '100%' }} />
@@ -74,13 +74,13 @@ const Test = ({ image }) => {
         )}
       </div>
       {file && <button onClick={handleUpload}>Upload</button>}
-      <h2>Uploaded Images 1</h2>
+      <h2>Uploaded Images 3</h2>
       <div style={{ display: 'flex' }}>
         {images
           .filter((image) => image._id !== deletedImageId) // Exclude the deleted image
           .map((image) => (
             <div key={image._id} style={{ margin: 10 }}>
-              <img src={image.imageUrl} alt="Uploaded" style={{ width: 200, height: 200 }} />
+              <img src={image.imageUrl3} alt="Uploaded" style={{ width: 200, height: 200 }} />
               <button onClick={() => handleClick(image)}>delete</button>
             </div>
           ))}
@@ -89,4 +89,4 @@ const Test = ({ image }) => {
   );
 };
 
-export default Test;
+export default Test3;
