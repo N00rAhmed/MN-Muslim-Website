@@ -3,7 +3,7 @@ import axios from 'axios';
 import { UseImageContext } from '../hooks/UseImageContext';
 import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 
-const Test2 = ({ image }) => {
+const ImageUploader2 = ({ image }) => {
   const [file, setFile] = useState(null);
   const [images, setImages] = useState([]);
   const { dispatch } = UseImageContext();
@@ -65,7 +65,7 @@ const Test2 = ({ image }) => {
 
   return (
     <div>
-      <h1>Image Uploader 2</h1>
+      <h1>Image Uploader for description2</h1>
       <div style={{ width: 200, height: 200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         {file ? (
           <img src={URL.createObjectURL(file)} alt="Uploaded" style={{ width: '100%', height: '100%' }} />
@@ -74,7 +74,7 @@ const Test2 = ({ image }) => {
         )}
       </div>
       {file && <button onClick={handleUpload}>Upload</button>}
-      <h2>Uploaded Images 2</h2>
+      <h2>Uploaded Images for description2</h2>
       <div style={{ display: 'flex' }}>
         {images
           .filter((image) => image._id !== deletedImageId) // Exclude the deleted image
@@ -89,4 +89,4 @@ const Test2 = ({ image }) => {
   );
 };
 
-export default Test2;
+export default ImageUploader2;

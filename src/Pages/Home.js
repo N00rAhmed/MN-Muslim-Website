@@ -118,7 +118,6 @@ const Home = () => {
             {imageData.map((slide, index) => (
                 <div key={index} className='sentence'>
             <img src={slide.imageUrl} alt="Uploaded" style={{ width: 200, height: 200 }} />
-                  {/* {slide.image1 && <img src={slide.image1} />} */}
                 </div>
                   ))}
 
@@ -126,7 +125,6 @@ const Home = () => {
               {carouselData.map((slide, index) => (
                 <div key={index} className='sentence'>
                   <p>{slide.description1}</p>
-                  {/* {slide.image1 && <img src={slide.image1} />} */}
                 </div>
 
                 
@@ -137,7 +135,6 @@ const Home = () => {
             {imageData2.map((slide, index) => (
                 <div key={index} className='sentence'>
             <img src={slide.imageUrl2} alt="Uploaded" style={{ width: 200, height: 200 }} />
-                  {/* {slide.image1 && <img src={slide.image1} />} */}
                 </div>
                   ))}
 

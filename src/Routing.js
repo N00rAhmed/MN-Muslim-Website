@@ -4,7 +4,7 @@ import About from './Pages/About';
 import Home from './Pages/Home';
 import Contact from './Pages/Contact';
 // import Directory from './Pages/Directory';
-import Admin from './Pages/Admin';
+import BusinessAdmin from './Pages/BusinessAdmin';
 import Masjid from './Pages/findMasjid';
 import Business from './Pages/findBusiness';
 import Footer from './components/Footer';
@@ -17,6 +17,7 @@ import CarouselForm from './components/CarouselForm'
 import Nav from './components/Nav';
 import Directory from './Pages/Directory';
 import ImagePage from './Pages/ImagePage';
+import Admin from './Pages/Admin';
 
 function Routing() {
   return (
@@ -54,8 +55,8 @@ function Routing() {
             element={ <Footer/> }
         />
         <Route
-            path="/admin"
-            element={ <Admin/> }
+            path="/businessadmin"
+            element={ <BusinessAdmin/> }
         />
         
         <Route
@@ -93,7 +94,12 @@ function Routing() {
             element={ <ImagePage /> }
         />
 
+        <Route
+            path="/admin"
+            element={ <Admin /> }
+        />
 
+{/* Admin */}
 
 {/* ImageUpload */}
         {/* Test */}
