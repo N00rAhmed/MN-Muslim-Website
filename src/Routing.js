@@ -18,6 +18,8 @@ import Nav from './components/Nav';
 import Directory from './Pages/Directory';
 import ImagePage from './Pages/ImagePage';
 import Admin from './Pages/Admin';
+import Register from './Pages/Register';
+import Login from './Pages/Login';
 
 function Routing() {
   return (
@@ -98,7 +100,19 @@ function Routing() {
             path="/admin"
             element={ <Admin /> }
         />
+        
+        <Route
+            path="/register"
+            element={ <Register /> }
+        />
 
+        <Route
+            path="/login"
+            element={ <Login /> }
+        />
+
+{/* Login */}
+{/* Register */}
 {/* Admin */}
 
 {/* ImageUpload */}
