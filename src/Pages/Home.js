@@ -126,8 +126,6 @@ const Home = () => {
                 <div key={index} className='sentence'>
                   <strong>{slide.description1}</strong>
                 </div>
-
-                
               ))}
             </div>
             <div className='sentence'>
