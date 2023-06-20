@@ -13,7 +13,7 @@ const Login = () => {
 
     try {
       // Send the login request to the server
-      const response = await fetch('http://localhost:4000/api/users/login', {
+      const response = await fetch('https://mnmuslims-api.onrender.com/api/users/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),

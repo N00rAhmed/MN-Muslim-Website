@@ -32,9 +32,9 @@ const PublicViewingMajids = () => {
       ) : (
         masjids.map((masjid) => (
           <div key={masjid._id} className="workout-details">
-            <a href="#" onClick={() => handlePostClickMasjid(masjid)}>
+            {/* <a href="#" onClick={() => handlePostClickMasjid(masjid)}> */}
               <h4>{masjid.Name}</h4>
-            </a>
+            {/* </a> */}
             <p>
               <strong>Address: </strong>
               {masjid.Address}

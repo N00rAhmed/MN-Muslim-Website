@@ -10,7 +10,7 @@ const Register = () => {
 
     try {
       // Send the registration request to the server
-      const response = await fetch('http://localhost:4000/api/users/register', {
+      const response = await fetch('https://mnmuslims-api.onrender.com/api/users/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),

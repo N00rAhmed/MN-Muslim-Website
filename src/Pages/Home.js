@@ -46,7 +46,7 @@ const Home = () => {
 
   useEffect(() => {
     // Fetch data from the API
-    fetch('http://localhost:4000/api/carousel/')
+    fetch('https://mnmuslims-api.onrender.com/api/carousel/')
       .then((response) => response.json())
       .then((data) => {
         setCarouselData(data);
@@ -55,7 +55,7 @@ const Home = () => {
       .catch((error) => console.error(error));
 
 
-      fetch('http://localhost:4000/uploads/')
+      fetch('https://mnmuslims-api.onrender.com/uploads/')
       .then((response) => response.json())
       .then((image) => {
         setImageData(image);
@@ -63,7 +63,7 @@ const Home = () => {
       })
       .catch((error) => console.error(error));
 
-      fetch('http://localhost:4000/uploads2/')
+      fetch('https://mnmuslims-api.onrender.com/uploads2/')
       .then((response) => response.json())
       .then((image) => {
         setImageData2(image);
@@ -71,7 +71,7 @@ const Home = () => {
       })
       .catch((error) => console.error(error));
 
-      fetch('http://localhost:4000/uploads3/')
+      fetch('https://mnmuslims-api.onrender.com/uploads3/')
       .then((response) => response.json())
       .then((image) => {
         setImageData3(image);
@@ -124,7 +124,7 @@ const Home = () => {
 
               {carouselData.map((slide, index) => (
                 <div key={index} className='sentence'>
-                  <p>{slide.description1}</p>
+                  <strong>{slide.description1}</strong>
                 </div>
 
                 
@@ -141,7 +141,7 @@ const Home = () => {
 
               {carouselData.map((slide, index) => (
                 <div key={index} className='sentence'>
-                  <p>{slide.description2}</p>
+                  <strong>{slide.description2}</strong>
                 </div>
               ))}
             </div>
@@ -156,21 +156,21 @@ const Home = () => {
 
               {carouselData.map((slide, index) => (
                 <div key={index} className='sentence'>
-                  <p>{slide.description3}</p>
+                  <strong>{slide.description3}</strong>
                 </div>
               ))}
             </div>
-          </Slider>
+          </Slider >
         )}
       </div>
 
       
-      <h3>About Us</h3>
+      <h2>About Us</h2>
       <p className='line'>Suhbah Collective’s goal is to promote the social, financial, and personal growth of its members and members of their community.</p>
       <div className='about-button'>
         <button onClick={() => navigate("/about")}>About</button>
       </div>
-      <h3>Join Today</h3>
+      <h2>Join Today</h2>
       <p className='line'>Want to be part of this effort to create an online hub for the community? Then join us now.</p>
       <div className='join-button'>
         <button onClick={() => navigate("/contact")}>Join</button>

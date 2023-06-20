@@ -15,7 +15,7 @@ const ImageUploader1 = ({ image }) => {
     // Fetch all images from the server
     const fetchImages = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/uploads');
+        const response = await axios.get('https://mnmuslims-api.onrender.com/uploads');
         setImages(response.data);
       } catch (error) {
         console.error(error);
@@ -27,7 +27,7 @@ const ImageUploader1 = ({ image }) => {
   
   const handleClick = async (image) => {
     try {
-      await axios.delete(`http://localhost:4000/uploads/${image._id}`);
+      await axios.delete(`https://mnmuslims-api.onrender.com/uploads/${image._id}`);
       dispatch({ type: 'DELETE_Image_Context', payload: image._id });
       setDeletedImageId(image._id); // Update the deletedImageId state
     } catch (error) {
@@ -41,12 +41,14 @@ const ImageUploader1 = ({ image }) => {
   };
 
   const handleUpload = async () => {
+    console.log('handleUpload function called');
+
     const formData = new FormData();
     formData.append('image', file);
 // imagetwo
 
     try {
-      const response = await axios.post('http://localhost:4000/uploads', formData, {
+      const response = await axios.post('https://mnmuslims-api.onrender.com/uploads', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -55,7 +57,7 @@ const ImageUploader1 = ({ image }) => {
       alert('Image uploaded successfully!');
       setFile(null);
       // Fetch all images again to update the list
-      const imagesResponse = await axios.get('http://localhost:4000/uploads');
+      const imagesResponse = await axios.get('https://mnmuslims-api.onrender.com/uploads');
       setImages(imagesResponse.data);
     } catch (error) {
       console.error(error);
