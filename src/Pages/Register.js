@@ -1,5 +1,6 @@
 // Register.js
 import React, { useState } from 'react';
+import AdminNav from '../components/AdminNav'
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -26,6 +27,7 @@ const Register = () => {
   return (
     <div>
       <h2>Register</h2>
+      <AdminNav/>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

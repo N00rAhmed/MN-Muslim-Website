@@ -21,20 +21,18 @@ const PublicViewingMajids = () => {
     fetchMasjids();
   }, []);
 
-  const handlePostClickMasjid = (masjid) => {
-    navigate(`/detailmasjid?Name=${encodeURIComponent(masjid.Name)}&address=${encodeURIComponent(masjid.Address)}&address=${encodeURIComponent(masjid.Address)}`);
+  const handleCardClick = (masjid) => {
+    navigate(`/detailmasjid?Name=${encodeURIComponent(masjid.Name)}&address=${encodeURIComponent(masjid.Address)}&jumuah=${encodeURIComponent(masjid['JumuahTimings/Language'])}&dailySalat=${encodeURIComponent(masjid['DailySalat(Yes/No)'])}&orgInfo=${encodeURIComponent(masjid.OrganizationInfo)}&notes=${encodeURIComponent(masjid.AdditionalNotes)}&contact=${encodeURIComponent(masjid['ContactInfo/Person'])}`);
   };
 
   return (
     <div>
-      {loading ? ( // Render loading text if loading is true
+      {loading ? (
         <p>Loading...</p>
       ) : (
         masjids.map((masjid) => (
           <div key={masjid._id} className="workout-details">
-            {/* <a href="#" onClick={() => handlePostClickMasjid(masjid)}> */}
-              <h4>{masjid.Name}</h4>
-            {/* </a> */}
+            <h4 onClick={() => handleCardClick(masjid)}>{masjid.Name}</h4>
             <p>
               <strong>Address: </strong>
               {masjid.Address}
@@ -42,10 +40,6 @@ const PublicViewingMajids = () => {
             <p>
               <strong>Jumuah Timings/Language: </strong>
               {masjid['JumuahTimings/Language']}
-            </p>
-            <p>
-              <strong>Address: </strong>
-              {masjid.Address}
             </p>
             <p>
               <strong>DailySalat(Yes/No): </strong>

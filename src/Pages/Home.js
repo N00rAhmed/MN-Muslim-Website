@@ -118,6 +118,7 @@ const Home = () => {
             {imageData.map((slide, index) => (
                 <div key={index} className='sentence'>
             <img src={slide.imageUrl} alt="Uploaded" style={{ width: 200, height: 200 }} />
+            {/* <img src={require('/images/image-name.png')} */}
                 </div>
                   ))}
 

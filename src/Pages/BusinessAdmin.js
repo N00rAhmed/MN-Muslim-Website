@@ -7,7 +7,6 @@ import AdminAnnouncement from './AdminAnnouncement';
 import BusinessDetails from '../components/BusinessDetails'
 import BusinessForm from '../components/BusinessForm.js';
 import AdminNav from '../components/AdminNav';
-
 import '../styles/admin.css';
 import Nav from '../components/Nav';
 function BusinessAdmin() {
@@ -30,7 +29,7 @@ function BusinessAdmin() {
     <div>
         {/* <Nav/> */}
         <h2>Business Admin</h2>
-
+        <AdminNav/>
         <button onClick={() => navigate("/AdminAnnouncement")}>Announcement</button>
 
         <div className='home'>

@@ -64,9 +64,7 @@ function NewPage() {
   };
 
   const handlePostClickMasjid = (masjid) => {
-    navigate(`/detailmasjid?Name=${encodeURIComponent(masjid.Name)}&address=${encodeURIComponent(
-      masjid.Address
-    )}`);
+    navigate(`/detailmasjid?Name=${encodeURIComponent(masjid.Name)}&address=${encodeURIComponent(masjid.Address)}&jumuah=${encodeURIComponent(masjid['JumuahTimings/Language'])}&dailySalat=${encodeURIComponent(masjid['DailySalat(Yes/No)'])}&orgInfo=${encodeURIComponent(masjid.OrganizationInfo)}&notes=${encodeURIComponent(masjid.AdditionalNotes)}&contact=${encodeURIComponent(masjid['ContactInfo/Person'])}`);
   };
 
   return (
@@ -138,9 +136,9 @@ function NewPage() {
               <div className="workouts">
                 {filteredMasjids.map((masjid) => (
                   <div className="workout-details" key={masjid._id}>
-                    {/* <a href="#" onClick={() => handlePostClickMasjid(masjid)}> */}
+                    <a href="#" onClick={() => handlePostClickMasjid(masjid)}>
                       <h4>{masjid.Name}</h4>
-                    {/* </a> */}
+                    </a>
                     <p>
                       <strong>Address: </strong>
                       {masjid.Address}
