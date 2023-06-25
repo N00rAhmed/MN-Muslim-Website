@@ -117,7 +117,7 @@ function NewPage() {
                     </p>
                     <p>
                       <strong>links: </strong>
-                      <a href={business.links}>{business.links}</a>
+                      <a href={business.links} target="_blank">{business.links}</a>
                     </p>
                     <p>
                       <strong>email: </strong>
@@ -147,18 +147,20 @@ function NewPage() {
                       <strong>Jumuah Timings/Language: </strong>
                       {masjid['JumuahTimings/Language']}
                     </p>
-                    <p>
+                    {/* <p>
                       <strong>DailySalat(Yes/No): </strong>
                       {masjid['DailySalat(Yes/No)']}
-                    </p>
+                    </p> */}
                     <p>
                       <strong>Organization Info: </strong>
-                      {masjid.OrganizationInfo}
+                      <a href={masjid.OrganizationInfo}  target="_blank">{masjid.OrganizationInfo}</a>
                     </p>
-                    <p>
+                    {/*  target="_blank" */}
+
+                    {/* <p>
                       <strong>Additional Notes: </strong>
                       {masjid.AdditionalNotes}
-                    </p>
+                    </p> */}
                     <p>
                       <strong>Contact Info: </strong>
                       {masjid['ContactInfo/Person']}

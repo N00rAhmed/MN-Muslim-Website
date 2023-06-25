@@ -30,7 +30,6 @@ function BusinessAdmin() {
         {/* <Nav/> */}
         <h2>Business Admin</h2>
         <AdminNav/>
-        <button onClick={() => navigate("/AdminAnnouncement")}>Announcement</button>
 
         <div className='home'>
             <div className='workouts'>

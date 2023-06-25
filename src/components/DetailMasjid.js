@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import '../styles/detailmasjid.css';
 
 const DetailMasjid = () => {
   const location = useLocation();
@@ -14,7 +15,7 @@ const DetailMasjid = () => {
   const contact = queryParams.get('contact');
 
   return (
-    <div>
+    <div className='all-masjid-data'>
       <h2>{name}</h2>
       <p>
         <strong>Address: </strong>
@@ -30,8 +31,9 @@ const DetailMasjid = () => {
       </p>
       <p>
         <strong>Organization Info: </strong>
-        {orgInfo}
+        <a href={orgInfo} target="_blank">{orgInfo}</a>
       </p>
+      {/*  target="_blank" */}
       <p>
         <strong>Additional Notes: </strong>
         {notes}

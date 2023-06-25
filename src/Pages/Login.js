@@ -1,4 +1,3 @@
-// Login.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -22,7 +21,8 @@ const Login = () => {
       const data = await response.json();
 
       if (response.ok) {
-        // Login successful, navigate to Admin page
+        // Login successful, store authentication token and navigate to Admin page
+        localStorage.setItem('token', data.token);
         navigate('/admin');
       } else {
         // Login unsuccessful, display error message

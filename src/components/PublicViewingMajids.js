@@ -32,7 +32,11 @@ const PublicViewingMajids = () => {
       ) : (
         masjids.map((masjid) => (
           <div key={masjid._id} className="workout-details">
-            <h4 onClick={() => handleCardClick(masjid)}>{masjid.Name}</h4>
+            <a href="#" onClick={() => handleCardClick(masjid)}>
+              <h4>
+                {masjid.Name}
+              </h4>
+            </a>
             <p>
               <strong>Address: </strong>
               {masjid.Address}
@@ -41,18 +45,18 @@ const PublicViewingMajids = () => {
               <strong>Jumuah Timings/Language: </strong>
               {masjid['JumuahTimings/Language']}
             </p>
-            <p>
+            {/* <p>
               <strong>DailySalat(Yes/No): </strong>
               {masjid['DailySalat(Yes/No)']}
-            </p>
+            </p> */}
             <p>
               <strong>Organization Info: </strong>
-              {masjid.OrganizationInfo}
+              <a href={masjid.OrganizationInfo}  target="_blank">{masjid.OrganizationInfo}</a>
             </p>
-            <p>
+            {/* <p>
               <strong>Additional Notes: </strong>
               {masjid.AdditionalNotes}
-            </p>
+            </p> */}
             <p>
               <strong>Contact Info: </strong>
               {masjid['ContactInfo/Person']}
