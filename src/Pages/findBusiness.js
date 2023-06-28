@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { UseBusinessesContext } from '../hooks/UseBusinessesContext';
 import { useNavigate } from 'react-router-dom';
+import '../styles/findbusiness.css';
 // components
 import BusinessDetails from '../components/BusinessDetails'
 import BusinessForm from '../components/BusinessForm.js';
@@ -40,7 +41,7 @@ function FindBusiness() {
   };
 
   return (
-    <div className='website'>
+    <div>
       {/* <Nav /> */}
       <h1>Find A Business</h1>
       {loading ? ( // Display loading text when loading is true

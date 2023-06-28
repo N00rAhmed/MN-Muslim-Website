@@ -1,6 +1,7 @@
 // Register.js
 import React, { useState } from 'react';
 import AdminNav from '../components/AdminNav'
+import '../styles/register.css';
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -28,23 +29,28 @@ const Register = () => {
     <div>
       <h2>Register</h2>
       <AdminNav/>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <br />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <br />
-        <button type="submit">Register</button>
-      </form>
+      <div className='register-details'>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <br />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <br />
+          <div className='register-button'>
+            <button type="submit">Register</button>
+          </div>
+        </form>
+
+      </div>
     </div>
   );
 };

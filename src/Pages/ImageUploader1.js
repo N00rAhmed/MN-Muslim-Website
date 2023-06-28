@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { UseImageContext } from '../hooks/UseImageContext';
 import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
+import '../styles/imageuploader.css';
 
 const ImageUploader1 = ({ image }) => {
   const [file, setFile] = useState(null);

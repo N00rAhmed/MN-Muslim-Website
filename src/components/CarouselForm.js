@@ -15,6 +15,7 @@ const CarouselForm = () => {
     const [description2, setDescription2] = useState('')
     const [description3, setDescription3] = useState('')
 
+
     const [image1, setImage1] = useState('')
 
 
@@ -25,7 +26,7 @@ const CarouselForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const carousel = {description1, description2, description3, image1}
+        const carousel = {description1, description2, description3}
 
         const response = await fetch('https://mnmuslims-api.onrender.com/api/carousel/', {
             method: 'POST',

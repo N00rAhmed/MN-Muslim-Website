@@ -1,3 +1,6 @@
+body {
+  background-color: rgb(179, 223, 223);
+}
 
 
 .sub-title{
@@ -30,10 +33,10 @@
   border-radius: 4px;
   cursor: pointer;
 }
-
+/* 
 .website{
   background-color: rgb(179, 223, 223);
-}
+} */
 .sentence{
     display: flex;
     justify-content: center;

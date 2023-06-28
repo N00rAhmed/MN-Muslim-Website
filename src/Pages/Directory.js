@@ -68,7 +68,7 @@ function NewPage() {
   };
 
   return (
-    <div className="website">
+    <div className="directory-background">
       <h1>Directory</h1>
       <div className="links">
         <a href="/findMasjid">
