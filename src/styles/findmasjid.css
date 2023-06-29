@@ -13,53 +13,13 @@ body {
     background-color: rgb(179, 223, 223);
   }
   
-header .container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
 a {
   text-decoration: none;
 }
 
-.admin-description-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  padding-left: 20%;
-  padding-right: 20%;
-}
 
-/* Media query for smaller screens */
-@media screen and (max-width: 768px) {
-  .admin-description-container {
-    padding-left: 10%;
-    padding-right: 10%;
-  }
-}
-
-/* Media query for even smaller screens */
-@media screen and (max-width: 480px) {
-  .admin-description-container {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-}
-
-.admin-description {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  padding-top: 5%;
-}
-
-.masjid-details {
+.masjids-details {
   background: #fff;
   border-radius: 4px;
   /* margin: 20px auto; */
@@ -68,8 +28,7 @@ a {
   position: relative;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
 
-
-
+    margin-left: 5%;
   /* background: #fff;
   border-radius: 4px;
   margin: 20px auto;
@@ -81,24 +40,24 @@ a {
 
 }
 
-.masjid-details a :hover{
+.masjids-details a :hover{
     color:rgb(36, 85, 158);
 }
   
 
-.masjid-details h4 {
+.masjids-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
 }
 
-.masjid-details p {
+.masjids-details p {
   margin: 0;
   font-size: 0.9em;
   color: #555;
 }
 
-.masjid-details span {
+.masjids-details span {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -113,21 +72,12 @@ body {
     background-color: rgb(179, 223, 223);
   }
   
-  .url-links {
+  .urls-links {
     overflow: hidden; /* Hide overflowing content */
     text-overflow: ellipsis; /* Truncate text with an ellipsis */
     white-space: nowrap; /* Prevent line breaks */
   }
   
-
-.search-field input{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* width: 50%; */
-    /* background-color: blue; */
-  }
 
 .links{
     display: flex;
@@ -137,7 +87,7 @@ a {
     text-decoration: none;
   }
 
-.workout-details a :hover{
+ a :hover{
     color:rgb(36, 85, 158);
 }
 

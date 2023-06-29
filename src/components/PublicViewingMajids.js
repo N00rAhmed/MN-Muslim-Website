@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/findmasjid.css';
 
 const PublicViewingMajids = () => {
   const [masjids, setMasjids] = useState([]);
@@ -31,7 +32,7 @@ const PublicViewingMajids = () => {
         <p>Loading...</p>
       ) : (
         masjids.map((masjid) => (
-          <div key={masjid._id} className="workout-details">
+          <div key={masjid._id} className="masjids-details">
             <a href="#" onClick={() => handleCardClick(masjid)}>
               <h4>
                 {masjid.Name}
@@ -51,7 +52,9 @@ const PublicViewingMajids = () => {
             </p> */}
             <p>
               <strong>Organization Info: </strong>
+              <div className="urls-links">
               <a href={masjid.OrganizationInfo}  target="_blank">{masjid.OrganizationInfo}</a>
+            </div>
             </p>
             {/* <p>
               <strong>Additional Notes: </strong>
