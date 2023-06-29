@@ -132,10 +132,10 @@ function NewPage() {
 
           <h2>Masjids</h2>
           <ul>
-          <div className="home">
-              <div className="workouts">
+          <div className="masjid">
+              <div className="masjids">
                 {filteredMasjids.map((masjid) => (
-                  <div className="workout-details" key={masjid._id}>
+                  <div className="masjid-details" key={masjid._id}>
                     <a href="#" onClick={() => handlePostClickMasjid(masjid)}>
                       <h4>{masjid.Name}</h4>
                     </a>
@@ -153,7 +153,10 @@ function NewPage() {
                     </p> */}
                     <p>
                       <strong>Organization Info: </strong>
+                      <div className="url-links">
                       <a href={masjid.OrganizationInfo}  target="_blank">{masjid.OrganizationInfo}</a>
+
+                      </div>
                     </p>
                     {/*  target="_blank" */}
 

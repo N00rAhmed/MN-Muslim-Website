@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { UseImageContext } from '../hooks/UseImageContext';
 import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
+import '../styles/imageuploader.css';
 
 const ImageUploader3 = ({ image }) => {
   const [file, setFile] = useState(null);
@@ -75,13 +76,15 @@ const ImageUploader3 = ({ image }) => {
       </div>
       {file && <button onClick={handleUpload}>Upload</button>}
       <h2>Uploaded Images for description3</h2>
-      <div style={{ display: 'flex' }}>
+      <div className="image-position" style={{ display: 'flex' }}>
         {images
           .filter((image) => image._id !== deletedImageId) // Exclude the deleted image
           .map((image) => (
             <div key={image._id} style={{ margin: 10 }}>
               <img src={image.imageUrl3} alt="Uploaded" style={{ width: 200, height: 200 }} />
+              <div className='image-delete'>
               <button onClick={() => handleClick(image)}>delete</button>
+            </div>
             </div>
           ))}
       </div>

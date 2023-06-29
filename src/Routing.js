@@ -20,6 +20,7 @@ import ImagePage from './Pages/ImagePage';
 import Admin from './Pages/Admin';
 import Register from './Pages/Register';
 import Login from './Pages/Login';
+import AdminAccounts from './Pages/AdminAccounts';
 
 function Routing() {
   return (
@@ -110,6 +111,14 @@ function Routing() {
             path="/login"
             element={ <Login /> }
         />
+
+        <Route
+            path="/accounts"
+            element={ <AdminAccounts /> }
+        />
+
+
+        {/* AdminAccounts */}
 
 {/* Login */}
 {/* Register */}

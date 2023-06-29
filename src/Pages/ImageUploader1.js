@@ -76,15 +76,18 @@ const ImageUploader1 = ({ image }) => {
           <input type="file" accept="image/*" onChange={handleFileChange} />
         )}
       </div>
+      
       {file && <button onClick={handleUpload}>Upload</button>}
       <h2>Uploaded Images for description1</h2>
-      <div style={{ display: 'flex' }}>
+      <div className="image-position" style={{ display: 'flex' }}>
         {images
           .filter((image) => image._id !== deletedImageId) // Exclude the deleted image
           .map((image) => (
             <div key={image._id} style={{ margin: 10 }}>
               <img src={image.imageUrl} alt="Uploaded" style={{ width: 200, height: 200 }} />
-              <button onClick={() => handleClick(image)}>delete</button>
+              <div className='image-delete'>
+                <button onClick={() => handleClick(image)}>delete</button>
+              </div>
             </div>
           ))}
       </div>

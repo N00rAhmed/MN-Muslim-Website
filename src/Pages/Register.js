@@ -1,11 +1,14 @@
 // Register.js
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
+
 import AdminNav from '../components/AdminNav'
 import '../styles/register.css';
 
 const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,6 +20,8 @@ const Register = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
       });
+
+      navigate('/accounts')
 
       const data = await response.json();
       console.log(data); // Registration response from the server
