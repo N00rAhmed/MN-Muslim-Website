@@ -1,9 +1,5 @@
-/* p{
-    cursor: pointer;
-} */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
-/* layout */
 :root {
   --primary: #1aac83;
   --error: #e7195a;
@@ -22,21 +18,12 @@ a {
 .masjids-details {
   background: #fff;
   border-radius: 4px;
-  /* margin: 20px auto; */
   margin: 20px 0;
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
-
-    margin-left: 5%;
-  /* background: #fff;
-  border-radius: 4px;
-  margin: 20px auto;
-  padding: 20px;
-  position: relative;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05); */
+  margin-left: 5%;
   width: 65%; 
-  /* max-width: 400px; */
 
 }
 
@@ -73,9 +60,9 @@ body {
   }
   
   .urls-links {
-    overflow: hidden; /* Hide overflowing content */
-    text-overflow: ellipsis; /* Truncate text with an ellipsis */
-    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
   }
   
 
@@ -92,20 +79,7 @@ a {
 }
 
 
-/* .searchfilter{
-    display: flex;
-    justify-content: center;
-} */
-
 link p{
     color:rgb(36, 85, 158);
 }
-
-
-
-/* p:hover{
-    color: aqua;
-} */
-
-
 

@@ -1,6 +1,5 @@
-// Register.js
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
+import { useNavigate } from 'react-router-dom';
 
 import AdminNav from '../components/AdminNav'
 import '../styles/register.css';

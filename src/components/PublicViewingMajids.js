@@ -4,7 +4,7 @@ import '../styles/findmasjid.css';
 
 const PublicViewingMajids = () => {
   const [masjids, setMasjids] = useState([]);
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const PublicViewingMajids = () => {
         const response = await fetch('https://mnmuslims-api.onrender.com/api/masjids/');
         const data = await response.json();
         setMasjids(data);
-        setLoading(false); // Set loading to false when data is fetched
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching masjids:', error);
       }
@@ -46,20 +46,12 @@ const PublicViewingMajids = () => {
               <strong>Jumuah Timings/Language: </strong>
               {masjid['JumuahTimings/Language']}
             </p>
-            {/* <p>
-              <strong>DailySalat(Yes/No): </strong>
-              {masjid['DailySalat(Yes/No)']}
-            </p> */}
             <p>
               <strong>Organization Info: </strong>
               <div className="urls-links">
               <a href={masjid.OrganizationInfo}  target="_blank">{masjid.OrganizationInfo}</a>
             </div>
             </p>
-            {/* <p>
-              <strong>Additional Notes: </strong>
-              {masjid.AdditionalNotes}
-            </p> */}
             <p>
               <strong>Contact Info: </strong>
               {masjid['ContactInfo/Person']}

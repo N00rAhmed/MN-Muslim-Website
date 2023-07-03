@@ -1,9 +1,5 @@
-/* p{
-    cursor: pointer;
-} */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
-/* layout */
 :root {
   --primary: #1aac83;
   --error: #e7195a;
@@ -26,59 +22,15 @@ a {
   text-decoration: none;
 }
 
-.admin-description-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  padding-left: 20%;
-  padding-right: 20%;
-}
-
-/* Media query for smaller screens */
-@media screen and (max-width: 768px) {
-  .admin-description-container {
-    padding-left: 10%;
-    padding-right: 10%;
-  }
-}
-
-/* Media query for even smaller screens */
-@media screen and (max-width: 480px) {
-  .admin-description-container {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-}
-
-.admin-description {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  padding-top: 5%;
-}
 
 .masjid-details {
   background: #fff;
   border-radius: 4px;
-  /* margin: 20px auto; */
   margin: 20px 0;
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
-
-
-
-  /* background: #fff;
-  border-radius: 4px;
-  margin: 20px auto;
-  padding: 20px;
-  position: relative;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05); */
   width: 65%; 
-  /* max-width: 400px; */
-
 }
 
 .masjid-details a :hover{
@@ -114,9 +66,9 @@ body {
   }
   
   .url-links {
-    overflow: hidden; /* Hide overflowing content */
-    text-overflow: ellipsis; /* Truncate text with an ellipsis */
-    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   
 
@@ -125,8 +77,6 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* width: 50%; */
-    /* background-color: blue; */
   }
 
 .links{
@@ -137,25 +87,12 @@ a {
     text-decoration: none;
   }
 
-.workout-details a :hover{
+  a :hover{
     color:rgb(36, 85, 158);
 }
 
-
-/* .searchfilter{
-    display: flex;
-    justify-content: center;
-} */
 
 link p{
     color:rgb(36, 85, 158);
 }
-
-
-
-/* p:hover{
-    color: aqua;
-} */
-
-
 

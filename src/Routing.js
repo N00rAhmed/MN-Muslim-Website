@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import About from './Pages/About';
 import Home from './Pages/Home';
 import Contact from './Pages/Contact';
-// import Directory from './Pages/Directory';
 import BusinessAdmin from './Pages/BusinessAdmin';
 import Masjid from './Pages/findMasjid';
 import Business from './Pages/findBusiness';
@@ -31,7 +30,6 @@ function Routing() {
             path="/"
             element={ <Home /> }
         />
-        {/* The next line is very important for the Navigate component to work */}
         <Route
             path="/about"
             element={ <About /> }
@@ -116,30 +114,6 @@ function Routing() {
             path="/accounts"
             element={ <AdminAccounts /> }
         />
-
-
-        {/* AdminAccounts */}
-
-{/* Login */}
-{/* Register */}
-{/* Admin */}
-
-{/* ImageUpload */}
-        {/* Test */}
-        {/* <Route
-            path="/new"
-            element={ <NewPage /> }
-        /> */}
-
-{/* NewPage */}
-{/* CarouselForm.js */}
-{/* AdminAnnouncement */}
-{/* DetailMasjid */}
-{/* PublicViewingDetails */}
-{/* Footer2 */}
-{/* Admin */}
-{/* Footer */}
-
 
     </Routes>
     

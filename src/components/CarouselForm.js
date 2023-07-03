@@ -3,9 +3,6 @@ import { UseCarouselContext } from '../hooks/UseCarouselContext';
 import '../styles/business.css';
 import { useNavigate } from 'react-router-dom';
 import CarouselDetails from "./CarouselDetails";
-import ImageUploader1 from '../Pages/ImageUploader1'
-import ImageUploader2 from '../Pages/ImageUploader2'
-import ImageUploader3 from '../Pages/ImageUploader3'
 
 
 const CarouselForm = () => {
@@ -14,9 +11,6 @@ const CarouselForm = () => {
     const [description1, setDescription1] = useState('')
     const [description2, setDescription2] = useState('')
     const [description3, setDescription3] = useState('')
-
-
-    const [image1, setImage1] = useState('')
 
 
     const [error, setError] = useState(null)
@@ -44,14 +38,10 @@ const CarouselForm = () => {
             setDescription1('')
             setDescription2('')
             setDescription3('')
-            setImage1('')
 
             setError(null)
             console.log('new annoucement added', json)
             dispatch({type:'CREATE_CAROUSEL_DATA', payload: json})
-
-            // navigate("/findBusiness")
-            // /AdminAnnouncement
         }
     }
 
@@ -62,7 +52,6 @@ const CarouselForm = () => {
 
     <label>description1</label>
     <input 
-    // type="text" 
     onChange={(e) => 
     setDescription1(e.target.value)}
     value={description1}
@@ -70,7 +59,6 @@ const CarouselForm = () => {
 
     <label>description2</label>
     <input 
-    // type="text" 
     onChange={(e) => 
     setDescription2(e.target.value)}
     value={description2}
@@ -79,7 +67,6 @@ const CarouselForm = () => {
 
     <label>description3</label>
     <input 
-    // type="text" 
     onChange={(e) => 
     setDescription3(e.target.value)}
     value={description3}

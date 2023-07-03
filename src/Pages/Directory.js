@@ -10,7 +10,7 @@ function NewPage() {
   const [masjids, setMasjids] = useState([]);
   const [filteredBusinesses, setFilteredBusinesses] = useState([]);
   const [filteredMasjids, setFilteredMasjids] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); // Add loading state
+  const [isLoading, setIsLoading] = useState(true);
 
   const navigate = useNavigate();
 
@@ -29,7 +29,7 @@ function NewPage() {
       setMasjids(masjidsResponse.data);
       setFilteredMasjids(masjidsResponse.data);
 
-      setIsLoading(false); // Set loading state to false after data is fetched
+      setIsLoading(false);
     } catch (error) {
       console.error('API error:', error);
     }
@@ -90,7 +90,7 @@ function NewPage() {
         </div>
 
 
-      {isLoading ? ( // Conditionally render loading text or content
+      {isLoading ? (
         <p>Loading...</p>
       ) : (
         <>
@@ -101,9 +101,9 @@ function NewPage() {
 
           <ul>
             <div className="home">
-              <div className="workouts">
+              <div className="page-container">
                 {filteredBusinesses.map((business) => (
-                  <div className="workout-details" key={business._id}>
+                  <div className="page-details" key={business._id}>
                     <a href="#" onClick={() => handlePostClick(business)}>
                       <h4>{business.title}</h4>
                     </a>
@@ -147,10 +147,6 @@ function NewPage() {
                       <strong>Jumuah Timings/Language: </strong>
                       {masjid['JumuahTimings/Language']}
                     </p>
-                    {/* <p>
-                      <strong>DailySalat(Yes/No): </strong>
-                      {masjid['DailySalat(Yes/No)']}
-                    </p> */}
                     <p>
                       <strong>Organization Info: </strong>
                       <div className="url-links">
@@ -158,12 +154,6 @@ function NewPage() {
 
                       </div>
                     </p>
-                    {/*  target="_blank" */}
-
-                    {/* <p>
-                      <strong>Additional Notes: </strong>
-                      {masjid.AdditionalNotes}
-                    </p> */}
                     <p>
                       <strong>Contact Info: </strong>
                       {masjid['ContactInfo/Person']}

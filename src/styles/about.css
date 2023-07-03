@@ -15,7 +15,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px; /* Add spacing around the text */
+  padding: 10px;
 }
 
 .suhbah-logo {
@@ -42,7 +42,7 @@
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
-  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  flex-wrap: wrap;
 }
 
 .border {
@@ -58,7 +58,7 @@
   border-radius: 10%;
   height: 300px;
   width: 300px;
-  margin: 10px; /* Add spacing between the cards */
+  margin: 10px;
 }
 
 .border:hover {
