@@ -104,7 +104,8 @@ z-index: -1; */
     flex-direction: column;
     position: relative;
     height: 300px;
-    width: 100%; 
+    width: 80%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the carousel horizontally */
     background-color: #6097b3;
     background-size: cover;
     background-position: center;
@@ -113,7 +114,7 @@ z-index: -1; */
     transition: box-shadow 0.3s ease;
     border-radius: 10px;
   }
-  
+      
   .carousel-container:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.664);
   }
